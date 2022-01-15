@@ -1,0 +1,131 @@
+body {
+    background-color: black;
+  }
+  
+  h1 {
+    color: white;
+    font-family: 'Vujahday Script', sans-serif;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 0%;
+  }
+  
+  h2 {
+  color: white;
+  font-family: 'Vujahday Script', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 0%;
+  }
+  
+  .intro {
+    color: white;
+    font-family: 'Vujahday Script', sans-serif;
+    font-size: 50px;
+    text-align: center;
+  }
+  
+  .startButton {
+    background-color: black;
+    color: white;
+    font-family: 'Vujahday Script', sans-serif;
+    font-size: 50px;
+    border-radius: 2px;
+    box-shadow: 2px black;
+    outline : dotted;
+    border : 0px 9px 0px 9px;
+    padding-left : 25px;
+    padding-right : 25px;
+    margin-left : 45%;
+    margin-right : 70px;
+    display : grid;
+    margin-bottom : 20px;
+    display: none;
+  }
+  
+  .nextButton {
+    background-color: black;
+    color: white;
+    font-family: 'Vujahday Script', sans-serif;
+    font-size: 50px;
+    border-radius: 2px;
+    box-shadow: 2px black;
+    outline : dotted;
+    border : 0px 9px 0px 9px;
+    padding-left : 25px;
+    padding-right : 25px;
+    margin-left : 45%;
+    margin-right : 70px;
+    display : grid;
+    margin-bottom : 20px;
+    display : none
+  }
+  
+  .getScore {
+    background-color: black;
+    color: white;
+    font-family: 'Vujahday Script', sans-serif;
+    font-size: 50px;
+    border-radius: 2px;
+    box-shadow: 2px black;
+    outline : dotted;
+    border : 0px 9px 0px 9px;
+    padding-left : 25px;
+    padding-right : 25px;
+    margin-left : 45%;
+    margin-right : 70px;
+    display : grid;
+    margin-bottom : 20px;
+    display: none
+  }
+  
+  .question {
+  background-color: black;
+  color: white;
+  font-family : 'Be Vietnam Pro', sans-serif;
+  margin: 31%;
+  display: flex;
+  width: 40vw;
+  height: 40hw;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  box-shadow: 2px black;
+  margin-top : 50px;
+  margin-bottom : 30px;
+  }
+  
+  .answerButton {
+    background-color: black;
+    color: white;
+    font-family : 'Be Vietnam Pro', sans-serif;
+    margin: 31%;
+    display: flex;
+    width: 40vw;
+    height: 40hw;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 2px black;
+    margin-top : 50px;
+    margin-bottom : 30px;
+    display: none
+  }
+  
+  .answerButton:hover {
+    background-color: white;
+    color: black;
+  }
+
+  
+  .hide {
+  display: none;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
