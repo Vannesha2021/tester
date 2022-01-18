@@ -1,4 +1,4 @@
-quiz = [
+quiz : [
     {
       question : "What is the standard distance between the target and archer in Olympics?",
       answer : [
@@ -51,44 +51,44 @@ quiz = [
     }
     ]
 
-quiz.Container=null,
-question=null, // HTML question wrapper
-answer=null, // HTML answers wrapper
+quizHeart = null,
+question = null, // HTML question wrapper
+answer = null, // HTML answers wrapper
 
 //score
-now=0, // current question
-score=0, // current score
+now = 0, // current question
+score = 0 // current score
 
-quizContainer = () => {
-    quizContainer = document.getElementById("questionContainer")
+quizContainer : () => {
+    quiz.quizHeart = document.getElementById("questionContainer")
 
-quiz.questions = document.createElement("div");
-quiz.questions.id = "questions";
-quizContainer.appendChild(quiz.questions);
+quiz.question = document.createElement("div");
+quiz.question.id = "question";
+quiz.quizHeart.appendChild(quiz.question);      
 
-quiz.answers = document.createElement("div");
-quiz.answers.id = "answers";
-quizContainer.appendChild(quiz.answers);
+quiz.answer = document.createElement("div");
+quiz.answer.id = "answer";
+quiz.quizHeart.appendChild(quiz.answer);
 
 // start quiz
 quiz.draw();
 
-window.addEventListener("load", quiz);
+window.addEventListener("load", quiz.quizContainer);
 }
 
-createQuiz = () => {
+createQuiz : () => {
     quiz.question.innerHTML = quiz.quiz[quiz.now].q;
 
     quiz.answer.innerHTML = "";
-    for (let i in quiz.quiz[quiz.now].a) {
+    for (let i in quiz.quiz[quiz.now].o) {
         let radio = document.createElement("input");
         radio.type = "radio";
         radio.name = "quiz";
-        radio.id = "quiza" + i;
-        quiz.answers.appendChild(radio);
+        radio.id = "quizo" + i;
+        quiz.answer.appendChild(radio);
         let label = document.createElement("label");
-        label.innerHTML = quiz.quiz[quiz.now].q[i];
-        label.setAttribute("for", "quiza" + i);
+        label.innerHTML = quiz.quiz[quiz.now].o[i];
+        label.setAttribute("for", "quizo" + i);
         label.dataset.idx = i;
         label.addEventListener("click", () => { quiz.select(label); });
         quiz.answers.appendChild(label);
@@ -97,8 +97,8 @@ createQuiz = () => {
 
 // (D) OPTION SELECTED
 
-select=(answer) => {
-    let all = quiz.answers.getElementsByTagName("label");
+select: (answer) => {
+    let all = quiz.answer.getElementsByTagName("label");
     for (let label of all) {
         label.removeEventListener("click", quiz.select);
       }
@@ -110,13 +110,20 @@ select=(answer) => {
         option.classList.add("wrong");
       }
       quiz.now++;
+      setTimeout(() => {
       if (quiz.now < quiz.data.length) { quiz.draw(); }
       else {
         quiz.question.innerHTML = `You have answered ${quiz.score} of ${quiz.data.length} correctly.`;
         quiz.answer.innerHTML = "";
       }
-    }, 1000;
+    }, 1000);
+}
 
+reset : () => {
+  quiz.now = 0;
+  quiz.score = 0;
+  quiz.draw();
+}
 
 
 
