@@ -52,6 +52,12 @@ margin-top: 0%;
   text-align: center;
   cursor: pointer;
 }
+
+#answer label:hover {
+  background: yellow;
+}
+
+
 #answer label.correct {
   background: rgb(94, 131, 20);
   border: 1px ;

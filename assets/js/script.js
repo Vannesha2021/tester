@@ -8,7 +8,7 @@ let quiz = {
         "Danube-Black Sea Canal",
         "Suez Canal"
       ],
-      correct : 3
+      correct : 3 
     },
     {
         question : "Which continent is Kazakhstan located at?",
@@ -49,13 +49,57 @@ let quiz = {
         "20.6%"
       ],
       correct : 1
+    }, {
+      question: "Which of the following is not a Polynesian island?",
+      answer: [
+        "Samoa",
+        "Wallis",
+        "Futuna",
+        "Fiji"
+      ],
+      correct: 3
+    }, {
+      question: "What is The Haka?",
+      answer: [
+        "Cake",
+        "Dance",
+        "Musical instrument",
+        "Fruit"
+      ],
+      correct: 1
+    }, {
+      question: "Which of the following fruits is banned in most hotels and transit rides?",
+      answer: [
+        "Rambutan",
+        "Mangosteen",
+        "Durian",
+        "Lychee"
+      ],
+      correct: 2
+    }, {
+      question: "Which of the following religion believes that the color Red symbolises good foutune and wealth?",
+      answer: [
+        "Chinese",
+        "Hawaiian",
+        "Muslim",
+        "Indian"
+      ],
+      correct: 0
+    }, {
+      question: "Which is the biggest city in Africa?",
+      answer: [
+        "Johannesburg",
+        "Nairobi",
+        "Lagos",
+        "Casablanca"
+      ],
+      correct: 2
     }
     ],
 
 quizHeart : null,
-question : null, // HTML question wrapper
+question : null,
 answer : null, // HTML answers wrapper
-nextButton : null,
 now : 0, // current question
 score : 0, // current score
 
@@ -104,27 +148,23 @@ select: (answer) => {
         quiz.score++;
         answer.classList.add("correct");
         alert("That's correct!");
+        
     } else {
         answer.classList.add("wrong");
         alert("Oh NO!");
       }
       quiz.now++;
       setTimeout(() => {
-      if (quiz.now < quiz.quiz.length) { quiz.draw(); }
+      if (quiz.now < quiz.quiz.length) {quiz.draw(); }
       else {
-        quiz.question.innerHTML = `You have answered ${quiz.score} of ${quiz.quiz.length} correctly.`;
+        quiz.question.innerHTML = `Out of ${quiz.quiz.length} you answered ${quiz.score} correctly.`;
         quiz.answer.innerHTML = "";
       }
-    }, 1000);
+    }, 20);
+    
 },
 
-reset : () => {
-  quiz.now = 0;
-  quiz.score = 0;
-  quiz.draw();
-}
 };
-
 window.addEventListener("load", quiz.init);
 
 
